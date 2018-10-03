@@ -47,6 +47,14 @@ app.get('/about', (req, res) => {
   });
 });
 
+app.get('/projects', (req, res) => {
+  res.render('projects.hbs', {
+    pageTitle: 'Projects Page',
+    projectsMsg: 'Portfolio here',
+    currentYear: new Date().getFullYear()
+  });
+});
+
 app.use(express.static(__dirname + '/public'));
 
 app.listen(port, () => {
